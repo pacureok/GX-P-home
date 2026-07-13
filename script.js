@@ -1,4 +1,4 @@
-// Inicializamos el efecto 3D "Tilt" en los elementos seleccionados
+// Inicializamos el efecto 3D "Tilt" de Vanilla-Tilt
 VanillaTilt.init(document.querySelectorAll(".hero-image-container, .card, .feat-card"), {
     max: 10,
     speed: 300,
@@ -6,8 +6,11 @@ VanillaTilt.init(document.querySelectorAll(".hero-image-container, .card, .feat-
     "max-glare": 0.15,
 });
 
-// Animación sutil de seguimiento de luces en el fondo al mover el mouse
+// Animación de seguimiento de luces en el fondo
 document.addEventListener('mousemove', (e) => {
     const glow = document.querySelector('.background-glow');
-    glow.style.transform = `translate(${e.clientX * 0.1}px, ${e.clientY * 0.1}px)`;
+    // Calcula la posición para que el resplandor siga sutilmente al cursor
+    const x = e.clientX * 0.1;
+    const y = e.clientY * 0.1;
+    glow.style.transform = `translate(${x}px, ${y}px)`;
 });
