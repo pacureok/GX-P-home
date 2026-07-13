@@ -4,15 +4,268 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAIX 1.5 - Inteligencia Artificial Local</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <link rel="shortcut icon" href="public/264-sin-título_20260708211905.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-color: #00ffcc;
+            --secondary-color: #7928ca;
+            --text-color: #f5f5f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .background-glow {
+            position: fixed;
+            top: -20%;
+            left: -10%;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(121, 40, 202, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            min-height: 80vh;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(45deg, var(--primary-color), #0070f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            color: #8f9094;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            background: rgba(255,255,255,0.01);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: var(--primary-color);
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 45%;
+            aspect-ratio: 16/10;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            backdrop-filter: blur(10px);
+            perspective: 1000px;
+        }
+
+        #product-img {
+            width: 90%;
+            height: auto;
+            object-fit: contain;
+            transform: translateZ(50px);
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: transform 0.1s ease-out;
+        }
+
+        .about-section {
+            padding: 5rem 5%;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .card {
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.1s ease-out;
+        }
+
+        .card h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .features-grid {
+            padding: 3rem 5% 6rem 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: border-color 0.3s, transform 0.1s ease-out;
+        }
+
+        .feat-card:hover {
+            border-color: var(--secondary-color);
+        }
+
+        .feat-card .icon-ai {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feat-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feat-card h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .feat-card p {
+            color: #8f9094;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 968px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 4rem; }
+            .hero-text { max-width: 100%; }
+            .hero-image-container { width: 90%; margin-top: 3rem; }
+            .cta-buttons { justify-content: center; }
+            .about-section { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
     <div class="background-glow"></div>
 
     <header>
-        <div class="logo">GX-P<span> / PAIX 1.5</span></div>
+        <div class="logo-container">
+            <img src="public/264-sin-título_20260708211905.ico" alt="GX-P Logo" class="logo-img">
+            <div class="logo-text">GX-P<span> / PAIX 1.5</span></div>
+        </div>
     </header>
 
     <main>
@@ -27,18 +280,17 @@
                 </div>
             </div>
 
-            <div class="hero-image-container" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
-                <div class="glow-card"></div>
-                <img src="tu-producto.png" alt="PAIX 1.5 Interface" id="product-img">
+            <div class="hero-image-container" id="tilt-hero">
+                <img src="public/imagen_2026-07-12_234224774.png" alt="PAIX 1.5 Interfaz" id="product-img">
             </div>
         </section>
 
         <section class="about-section">
-            <div class="card basic-card" data-tilt data-tilt-max="10">
+            <div class="card structural-tilt">
                 <h2>¿Qué es GX-P?</h2>
                 <p>Un navegador web premium, ligero y altamente personalizable desarrollado en <strong>Python (PyQt6 & QtWebEngine)</strong> con IA nativa.</p>
             </div>
-            <div class="card basic-card" data-tilt data-tilt-max="10">
+            <div class="card structural-tilt">
                 <h2>¿Qué es PAIX?</h2>
                 <p>Es el núcleo inteligente de GX-P. Un asistente diseñado para disparar tu productividad mediante el análisis de contexto en tiempo real.</p>
             </div>
@@ -46,22 +298,22 @@
 
         <h2 class="section-title" id="features">Tecnología de Vanguardia</h2>
         <section class="features-grid">
-            <div class="feat-card" data-tilt data-tilt-max="12">
-                <div class="icon">🤖</div>
+            <div class="feat-card structural-tilt">
+                <img src="public/254 sin título_20260705004259.png" alt="PAIX AI Icon" class="icon-ai">
                 <h3>Motor Local</h3>
                 <p>Basado en LLMs potentes como Llama 3.2 y Qwen 2.5 ejecutándose directamente en tu hardware. Privacidad absoluta.</p>
             </div>
-            <div class="feat-card" data-tilt data-tilt-max="12">
+            <div class="feat-card structural-tilt">
                 <div class="icon">⚡</div>
                 <h3>Carga Asíncrona</h3>
                 <p>Integración en RAM asíncrona al iniciar. Tu navegador vuela mientras la IA se prepara en segundo plano.</p>
             </div>
-            <div class="feat-card" data-tilt data-tilt-max="12">
+            <div class="feat-card structural-tilt">
                 <div class="icon">🔮</div>
                 <h3>Interfaz Premium</h3>
                 <p>Animaciones fluidas, burbujas de chat interactivas y una gestión visual de pestañas espectacular.</p>
             </div>
-            <div class="feat-card" data-tilt data-tilt-max="12">
+            <div class="feat-card structural-tilt">
                 <div class="icon">🔒</div>
                 <h3>Control de Contexto</h3>
                 <p>Tú decides. Elige exactamente qué pestañas lee PAIX para responder tus dudas y resumir datos al instante.</p>
@@ -73,6 +325,51 @@
         <p>&copy; 2026 GX-P Browser & PAIX AI. Desarrollado en Python, HTML5, CSS3 y JS.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Animación de luces de fondo siguiendo al mouse
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.background-glow');
+            glow.style.transform = `translate(${e.clientX * 0.05}px, ${e.clientY * 0.05}px)`;
+        });
+
+        // Efecto 3D de inclinación nativo personalizado (Vanilla 3D Tilt)
+        function apply3DTilt(element, maxTilt = 10, perspective = 1000) {
+            element.style.transition = "transform 0.1s ease-out";
+            
+            element.addEventListener("mousemove", (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const xc = rect.width / 2;
+                const yc = rect.height / 2;
+                
+                const angleX = (yc - y) / yc * maxTilt;
+                const angleY = (x - xc) / xc * maxTilt;
+                
+                element.style.transform = `perspective(${perspective}px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+            });
+            
+            element.addEventListener("mouseleave", () => {
+                element.style.transition = "transform 0.5s ease-out";
+                element.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg)`;
+            });
+            
+            element.addEventListener("mouseenter", () => {
+                element.style.transition = "transform 0.1s ease-out";
+            });
+        }
+
+        // Aplicar el efecto 3D al contenedor de la interfaz del producto (Hero)
+        const heroContainer = document.getElementById("tilt-hero");
+        if(heroContainer) {
+            apply3DTilt(heroContainer, 15, 1200);
+        }
+
+        // Aplicar a las tarjetas secundarias
+        document.querySelectorAll(".structural-tilt").forEach(card => {
+            apply3DTilt(card, 8, 1000);
+        });
+    </script>
 </body>
 </html>
