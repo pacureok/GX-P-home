@@ -2,78 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas de Actualización - GX-P & PAIX</title>
-    <link rel="icon" href="public/264-sin-título_20260708211905.ico" type="image/x-icon">
+    <title>Actualizaciones - PAIX</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="actu.css"> <!-- Vinculado -->
 </head>
 <body>
-
-    <div class="background-glow"></div>
-
     <header>
-        <div class="logo">
-            <img src="public/264-sin-título_20260708211905.ico" alt="GX-P Logo" class="logo-img">
-            GX-P<span> / PAIX</span>
-        </div>
-        <nav class="top-nav">
-            <a href="index.html">Volver al Inicio</a>
-        </nav>
+        <div class="logo">GX-P<span> / Actualización</span></div>
+        <nav class="top-nav"><a href="index.html">Volver al Inicio</a></nav>
     </header>
 
     <main class="update-main">
-        <section class="update-header">
-            <span class="badge">NUEVA VERSIÓN</span>
-            <h1>Transición y Evolución: <span>De la Era V1.5 al Futuro</span></h1>
-            <p>Descubre a fondo los cambios en la arquitectura, la integración del nuevo motor inteligente y las funcionalidades inéditas de nuestro ecosistema.</p>
-        </section>
-
+        <h1>Notas de Actualización V1.5</h1>
         <div class="update-container">
-            
-            <!-- SECCIÓN 1: INTELIGENCIA ARTIFICIAL -->
-            <div class="update-card border-cyan">
-                <h2>🧠 1. Modificaciones Profundas en la IA (PAIX)</h2>
-                <ul class="update-list">
-                    <li><strong>Corrección del Cierre de Uso y Nuevo Motor Global:</strong> Se solucionó el problema crítico donde la IA se congelaba y cerraba inesperadamente el navegador en PCs sin GPU dedicada. El motor ha sido rediseñado desde cero para una ejecución global estable.</li>
-                    <li><strong>Generación Multimodal (Imagen + Texto a Imagen):</strong> PAIX ahora es capaz de interpretar una imagen base junto con tu prompt de texto para generar resultados visuales mucho más precisos.</li>
-                    <li><strong><span class="highlight">NUEVO:</span> Texto a Música:</strong> Hemos integrado un modelo capaz de sintetizar audio. Ahora puedes generar pistas musicales o efectos de sonido de hasta 20 segundos utilizando únicamente descripciones de texto.</li>
-                    <li><strong>Expansión de APIs:</strong> Integración con un abanico mucho más amplio de APIs de IA para ofrecer respuestas más rápidas, generación de código más eficiente y análisis de datos avanzado.</li>
+            <section class="update-card border-cyan">
+                <h2>🧠 IA y Motor Global</h2>
+                <ul>
+                    <li>Corrección de cierre (IA): nuevo motor propio compilado a .exe con velocidad de C++.</li>
+                    <li>Generación multimodal: Imagen + Texto a Imagen.</li>
+                    <li>Nueva función: Texto a música (20 segundos).</li>
+                    <li>Expansión de APIs de IA para mayor eficiencia.</li>
                 </ul>
-            </div>
-
-            <!-- SECCIÓN 2: MEJORAS DEL NAVEGADOR -->
-            <div class="update-card border-purple">
-                <h2>🌐 2. Novedades del Navegador (GX-P)</h2>
-                <ul class="update-list">
-                    <li><strong>Soporte Oficial para Extensiones:</strong> Hemos habilitado la arquitectura para instalar y gestionar extensiones, permitiendo expandir las herramientas del navegador según tus necesidades.</li>
-                    <li><strong>Panel de Ayuda (Help Button):</strong> Un nuevo directorio interactivo que desglosa todas las APIs de IA en uso, explicando de manera transparente qué hace cada una, sus límites y cómo activarlas.</li>
-                    <li><strong>Vista Previa Inteligente (Hover Insight):</strong> Revolucionamos la forma en que navegas. Al posicionar el mouse sobre un enlace (hover), aparecerá una mini-pantalla flotante. PAIX leerá el destino en segundo plano y te mostrará una captura miniatura junto con un <em>resumen rápido</em> del contenido de la página antes de hacer clic.</li>
-                    <li><strong>Actualizador Automático Independiente:</strong> Se ha creado un script en Python externo dedicado exclusivamente a gestionar las descargas de parches y actualizaciones en segundo plano, sin afectar el rendimiento de tu navegación.</li>
+            </section>
+            <section class="update-card border-purple">
+                <h2>🌐 Mejoras de Navegador</h2>
+                <ul>
+                    <li>Sistema nativo de extensiones.</li>
+                    <li>Botón HELP: guía interactiva de APIs.</li>
+                    <li>Hover Insight: Mini pantalla con resumen al pasar el mouse por enlaces.</li>
+                    <li>Actualizador automático (script .py independiente).</li>
                 </ul>
-            </div>
-
-            <!-- SECCIÓN 3: ARQUITECTURA Y RENDIMIENTO -->
-            <div class="update-card border-gray">
-                <h2>⚙️ 3. Refactorización de Arquitectura y Dependencias</h2>
-                <div class="architecture-details">
-                    <p><strong>El problema:</strong> En la versión V1.5, iniciar el modo IA provocaba un cuello de botella severo. La dependencia <code>ollama-cpp</code> en Python colapsaba la memoria RAM y cerraba el programa en computadoras sin una tarjeta gráfica (GPU) dedicada.</p>
-                    <p><strong>La solución:</strong> Mantendremos la estructura de los archivos principales, pero haremos una purga masiva de dependencias ineficientes. Hemos retirado el módulo conflictivo.</p>
-                    <p><strong>El Nuevo Motor:</strong> En su lugar, hemos desarrollado un motor de inferencia propio escrito en Python. Este script será compilado directamente a un ejecutable (<code>.exe</code>), lo que nos permite ejecutar operaciones complejas con la velocidad nativa de C++, optimizando el uso de la CPU y asegurando que funcione sin problemas en cualquier equipo, tenga GPU o no.</p>
-                    <hr class="divider">
-                    <h3>Resumen de Limpieza:</h3>
-                    <ul class="update-list">
-                        <li><strong>Añadido:</strong> Motor `.exe` compilado a medida, soporte multimodal nativo, pre-caché de enlaces.</li>
-                        <li><strong>Retirado:</strong> <code>ollama-cpp</code> y librerías de dependencias redundantes que causaban bloqueos (bloatware).</li>
-                    </ul>
-                </div>
-            </div>
-
+            </section>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 GX-P Browser & PAIX AI. Desarrollado en Python, HTML5, CSS3 y JS.</p>
-    </footer>
-
+    <script src="actu.js"></script> <!-- Vinculado -->
 </body>
 </html>
