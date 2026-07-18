@@ -1,0 +1,17 @@
+{
+  "actualizacion": {
+    "version_actual": "1.5",
+    "fecha_lanzamiento": "2026-07-18",
+    "obligatoria": true,
+    "url_descarga": "https://tuservidor.com",
+    "requisitos": {
+      "sistema_operativo": "Windows 10 o superior",
+      "espacio_libre_GB": 9
+    },
+    "cambios": [
+      "Optimización del rendimiento general.",
+      "Corrección de errores en la base de datos interna.",
+      "correcion de IA y boton ajustes."
+    ]
+  }
+}
