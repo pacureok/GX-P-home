@@ -13,24 +13,54 @@
     </header>
 
     <main class="update-main">
-        <h1>Notas de Actualización V1.5</h1>
+        <h1>Notas de Actualización V1.7</h1>
         <div class="update-container">
             <section class="update-card border-cyan">
-                <h2>🧠 IA y Motor Global</h2>
+                <h2>🎮 1. Modo Mando / Consola Total (Anti-Fantasmas)</h2>
                 <ul>
-                    <li>Corrección de cierre (IA): nuevo motor propio compilado a .exe con velocidad de C++.</li>
-                    <li>Generación multimodal: Imagen + Texto a Imagen.</li>
-                    <li>Nueva función: Texto a música (20 segundos).</li>
-                    <li>Expansión de APIs de IA para mayor eficiencia.</li>
+                    <li><strong>Activación por Botón:</strong> Al presionar cualquier botón de tu mando de Xbox o PlayStation, la aplicación libera de inmediato la memoria VRAM/RAM de la IA y transiciona sin problemas al modo consola.</li>
+                    <li><strong>Sistema Anti-Bucle:</strong> Se corrigió el error de rebote (bucle infinito) que te devolvía al modo mando al intentar salir; ahora cuenta con una pausa inteligente que estabiliza la detección al regresar al escritorio.</li>
                 </ul>
             </section>
+
             <section class="update-card border-purple">
-                <h2>🌐 Mejoras de Navegador</h2>
+                <h2>🎬 2. Nueva Intro Multimedia sin Bordes</h2>
                 <ul>
-                    <li>Sistema nativo de extensiones.</li>
-                    <li>Botón HELP: guía interactiva de APIs.</li>
-                    <li>Hover Insight: Mini pantalla con resumen al pasar el mouse por enlaces.</li>
-                    <li>Actualizador automático (script .py independiente).</li>
+                    <li><strong>Video Personalizado:</strong> Al entrar al Modo Mando, se reproduce la nueva intro en formato flotante sin marcos utilizando el video ubicado en <code>engui_controler/video/0723 (2).mp4</code>.</li>
+                </ul>
+            </section>
+
+            <section class="update-card border-cyan">
+                <h2>🖱️ 3. Cursor Virtual Exclusivo</h2>
+                <ul>
+                    <li><strong>Control por Joystick Izquierdo:</strong> Mueve un puntero flotante exclusivo dentro del navegador de forma fluida, sin interferir ni mover el cursor físico de tu ordenador Windows.</li>
+                    <li><strong>Sistema de 5 Estados Visuales:</strong> Cambia automáticamente de imagen según la acción (<code>mouse.png</code>, <code>clik.png</code>, <code>arrastrar.png</code>, <code>espera.png</code>, <code>buscar.png</code>).</li>
+                    <li><strong>Scroll con Joystick Derecho:</strong> Funciona exactamente como la Rueda del Ratón para subir y bajar por las páginas web cómodamente desde el sofá.</li>
+                </ul>
+            </section>
+
+            <section class="update-card border-purple">
+                <h2>🔍 4. Buscador Flotante y Teclado Virtual con Inyección Web</h2>
+                <ul>
+                    <li><strong>Gatillo Izquierdo (LT):</strong> Despliega y oculta al instante una barra de búsqueda flotante (estilo Spotlight / TV) en el centro de la pantalla.</li>
+                    <li><strong>Escribir en la Web:</strong> Gracias a la inyección de JavaScript, al abrir el teclado virtual puedes escribir directamente en los campos de texto activos de las páginas web en tiempo real.</li>
+                </ul>
+            </section>
+
+            <section class="update-card border-cyan">
+                <h2>📑 5. Gestión Avanzada de Pestañas y Atajos del Mando</h2>
+                <ul>
+                    <li><strong>LB / RB:</strong> Permiten alternar de forma cíclica entre tus pestañas abiertas situadas en la parte inferior.</li>
+                    <li><strong>Botón Y:</strong> Cierra de inmediato la pestaña activa actual.</li>
+                    <li><strong>Botón B Inteligente:</strong> Funciona como un "Escape" contextual; cierra menús/teclados o actúa como el botón de Atrás en el historial web.</li>
+                </ul>
+            </section>
+
+            <section class="update-card border-purple">
+                <h2>🧩 6. Soporte para Extensiones de Sonido y Personalización (GUI / theme.xml)</h2>
+                <ul>
+                    <li><strong>Estructura de Paquetes de Sonido:</strong> Soporte completo para paquetes personalizados en <code>GX-P/extensions/sounds/</code> mapeados mediante <code>manifest.json</code>[cite: 1].</li>
+                    <li><strong>Personalización de Interfaz (theme.xml):</strong> Permite ocultar, remover botones de la memoria o inyectar accesos directos personalizados utilizando archivos de configuración XML avanzados[cite: 1].</li>
                 </ul>
             </section>
         </div>
