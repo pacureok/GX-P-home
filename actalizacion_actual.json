@@ -1,17 +1,20 @@
 {
   "actualizacion": {
-    "version_actual": "1.5",
-    "fecha_lanzamiento": "2026-07-18",
+    "version_actual": "1.7",
+    "fecha_lanzamiento": "2026-07-23",
     "obligatoria": true,
-    "url_descarga": "https://drive.google.com/drive/folders/1jznL83PedAj46rtWadc7MTB22QP-o7lf?usp=drive_link",
+    "url_descarga": "https://drive.google.com/drive/folders/1hVmZQ5xpG2reEgWPp0U9KeboH9nZH0iU?usp=drive_link",
     "requisitos": {
       "sistema_operativo": "Windows 10 o superior",
       "espacio_libre_GB": 9
     },
     "cambios": [
-      "Optimización del rendimiento general.",
-      "Corrección de errores en la base de datos interna.",
-      "correcion de IA y boton ajustes."
+      "Implementación del Modo Mando / Consola Total con sistema anti-fantasmas y anti-bucle.",
+      "Nueva intro multimedia sin bordes en el reproductor integrado.",
+      "Cursor virtual exclusivo de 5 estados y scroll adaptado para joysticks.",
+      "Buscador flotante con inyección web mediante teclado virtual y gatillo LT.",
+      "Atajos avanzados con mandos de Xbox/PlayStation (gestión de pestañas, cierre rápido y botón B contextual).",
+      "Soporte para extensiones de audio personalizables y modificación de interfaz mediante theme.xml."
     ]
   }
 }
